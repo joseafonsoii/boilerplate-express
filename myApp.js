@@ -1,48 +1,15 @@
-let express = require('express');
-let app = express();
+var express = require('express');
+var app = express();
 
+// ✅ Comente ou remova a rota anterior
+// app.get("/", function(req, res) {
+//   res.send("Hello Express");
+// });
 
-
-// Adicione essa linha:
+// ✅ Envie o arquivo index.html
 app.get("/", function(req, res) {
- res.send("Hello Express");
+  const absolutePath = __dirname + "/views/index.html";
+  res.sendFile(absolutePath);
 });
 
 module.exports = app;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- module.exports = app;
