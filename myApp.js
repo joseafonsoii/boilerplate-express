@@ -7,9 +7,12 @@ var app = express();
 // });
 
 // ✅ Envie o arquivo index.html
-app.get("/", function(req, res) {
-  const absolutePath = __dirname + "/views/index.html";
-  res.sendFile(absolutePath);
-});
+//app.get("/", function(req, res) {
+//  const absolutePath = __dirname + "/views/index.html";
+//  res.sendFile(absolutePath);
+//});
+
+// ✅ Middleware para servir arquivos estáticos
+app.use("/public", express.static(__dirname + "/public"));
 
 module.exports = app;
