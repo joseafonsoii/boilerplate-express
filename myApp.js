@@ -1,18 +1,24 @@
 var express = require('express');
 var app = express();
 
-// ✅ Comente ou remova a rota anterior
+// Comente ou remova a rota anterior
 // app.get("/", function(req, res) {
 //   res.send("Hello Express");
 // });
 
-// ✅ Envie o arquivo index.html
+// Envie o arquivo index.html
 //app.get("/", function(req, res) {
 //  const absolutePath = __dirname + "/views/index.html";
 //  res.sendFile(absolutePath);
 //});
 
-// ✅ Middleware para servir arquivos estáticos
-app.use("/public", express.static(__dirname + "/public"));
+// Middleware para servir arquivos estáticos
+//app.use("/public", express.static(__dirname + "/public"));
+
+// Rota JSON
+app.get("/json", function(req, res) {
+  res.json({ message: "Hello json" });
+});
+
 
 module.exports = app;
